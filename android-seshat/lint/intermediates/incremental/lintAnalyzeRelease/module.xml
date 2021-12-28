@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/Users/tgloureiro/Documents/beeper/android-seshat/android-seshat"
+    name=":android-seshat"
+    type="LIBRARY"
+    maven="android-seshat-root:android-seshat:"
+    gradle="7.0.0"
+    buildFolder="lint"
+    bootClassPath="/Users/tgloureiro/Library/Android/sdk/platforms/android-31/android.jar:/Users/tgloureiro/Library/Android/sdk/build-tools/30.0.2/core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-31"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>
