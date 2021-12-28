@@ -1,0 +1,2 @@
+com/beeper/android_seshat/BuildConfig.java
+ com.beeper.android_seshat.BuildConfig
