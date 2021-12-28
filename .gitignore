@@ -139,6 +139,8 @@ fabric.properties
 
 !/gradle/wrapper/gradle-wrapper.jar
 
+lint/*
+
 # Rust
 bindings/target/
 bindings/Cargo.lock
