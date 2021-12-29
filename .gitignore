@@ -136,12 +136,9 @@ crashlytics-build.properties
 fabric.properties
 
 ### AndroidStudio Patch ###
-
 !/gradle/wrapper/gradle-wrapper.jar
 
-
 ### Lint files ###
-
 lint/*
 
 # Rust
