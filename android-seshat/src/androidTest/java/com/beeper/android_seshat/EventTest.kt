@@ -27,7 +27,6 @@ class EventTest {
             "@example2:localhost",
             151636_2244026,
             "!test_room:localhost",
-            EVENT_SOURCE
         )
     }
 
@@ -50,7 +49,6 @@ class EventTest {
             testSender,
             testServerTs,
             testRoomId,
-            EVENT_SOURCE
         )
         val type = event.getEventType()
         MatcherAssert.assertThat(type, CoreMatchers.equalTo(testType))
@@ -75,7 +73,6 @@ class EventTest {
             testSender,
             testServerTs,
             testRoomId,
-            EVENT_SOURCE
         )
         val nullMessageType = event2.getMessageType()
         MatcherAssert.assertThat(nullMessageType, CoreMatchers.equalTo(null))
@@ -91,7 +88,6 @@ class EventTest {
             "@example2:localhost",
             151636_2244026,
             "!test_room:localhost",
-            EVENT_SOURCE
         )
 
         event.testFinalize()
