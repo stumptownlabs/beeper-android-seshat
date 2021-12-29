@@ -139,6 +139,9 @@ fabric.properties
 
 !/gradle/wrapper/gradle-wrapper.jar
 
+
+### Lint files ###
+
 lint/*
 
 # Rust
