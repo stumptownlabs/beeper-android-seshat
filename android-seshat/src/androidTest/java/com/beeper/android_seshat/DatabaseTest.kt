@@ -18,9 +18,11 @@ import com.beeper.android_seshat.database.*
 import com.beeper.android_seshat.event.CrawlerCheckpoint
 import com.beeper.android_seshat.event.Direction
 import com.beeper.android_seshat.event.Event
+import com.beeper.android_seshat.event.EventType
 import com.beeper.android_seshat.search.SearchConfig
 import com.beeper.android_seshat.util.Error
 import com.beeper.android_seshat.util.Success
+import org.hamcrest.CoreMatchers
 
 
 /**
@@ -313,13 +315,13 @@ class DatabaseTest {
             Log.w("Search test error" ,"${serializationResult.reason}-${serializationResult.reason.code}-${serializationResult.reason.message}")
         }else {
             val eventResult = (serializationResult as Success).value
-            assertThat(eventResult.getEventId(), equalTo(event.getEventId()))
-            assertThat(eventResult.getContentValue(), equalTo(event.getContentValue()))
-            assertThat(eventResult.getEventType(), equalTo(event.getEventType()))
-            assertThat(eventResult.getMessageType(), equalTo(event.getMessageType()))
-            assertThat(eventResult.getRoomId(), equalTo(event.getRoomId()))
-            assertThat(eventResult.getSender(), equalTo(event.getSender()))
-            assertThat(eventResult.getServerTs(), equalTo(event.getServerTs()))
+            assertThat(eventResult.getEventId(), equalTo<String>(event.getEventId()))
+            assertThat(eventResult.getContentValue(), equalTo<String>(event.getContentValue()))
+            assertThat(eventResult.getEventType(), equalTo<EventType>(event.getEventType()))
+            assertThat(eventResult.getMessageType(), equalTo<String?>(event.getMessageType()))
+            assertThat(eventResult.getRoomId(), equalTo<String>(event.getRoomId()))
+            assertThat(eventResult.getSender(), equalTo<String>(event.getSender()))
+            assertThat(eventResult.getServerTs(), equalTo<Long>(event.getServerTs()))
         }
 
 
