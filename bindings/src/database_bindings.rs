@@ -43,8 +43,9 @@ pub unsafe extern "C" fn Java_com_beeper_android_1seshat_database_Database_n_1ne
                 database_ptr_field_name,
                 jvm_long_field_id_type,
                 JValue::from(database_pointer),
-            )
-                .unwrap();
+            ).unwrap();
+
+            panic!("this is a mistake")
         }
         Err(error) => {
             let error_message = error.to_string();
