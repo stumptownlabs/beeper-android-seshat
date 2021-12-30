@@ -63,7 +63,7 @@ afterEvaluate {
 
                 groupId = "com.beeper"
                 artifactId = "android-seshat"
-                version = '0.1.2'
+                version = '0.1.1'
                 pom {
                     name.set("Android Seshat")
                     description.set("Seshat bindings for Android")
@@ -103,7 +103,7 @@ cargo {
     verbose = true
     module  = "../bindings"
     libname = "android_seshat_bindings"
-    targets = ["arm64","arm", "x86", "x86_64"]
+    targets = ["arm64","arm", "x86"]
     profile = 'release'
 }
 
