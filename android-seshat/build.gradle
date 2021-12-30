@@ -103,7 +103,7 @@ cargo {
     verbose = true
     module  = "../bindings"
     libname = "android_seshat_bindings"
-    targets = ["arm64","arm", "x86"]
+    targets = ["arm64","arm", "x86", "x86_64"]
     profile = 'release'
 }
 
