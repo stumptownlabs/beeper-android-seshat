@@ -18,7 +18,8 @@ Kotlin bindings for the Matrix message database/indexer Seshat.
 
 - Now rust is installed, we need to add the supported Android architectures as targets.
 
-$ rustup target add aarch64-linux-android armv7-linux-androideabi i686-linux-android
+$ rustup target
+        add aarch64-linux-android armv7-linux-androideabi i686-linux-android x86_64-linux-android
 
 - Setup NDK on Android Studio
 
@@ -26,3 +27,9 @@ Open Android Studio. From the toolbar, go
 to `Android Studio > Preferences > Appearance & Behaviour > Android SDK > SDK Tools`.
 Check NDK and CMAKE  for installation and click `OK`.
 Comment: downgrade from NDK 23 to 22 because of https://github.com/bbqsrc/cargo-ndk/issues/22
+
+- Manually publish the library to Package Registry
+Setup the GITLAB_PRIVATE_TOKEN environment variable with your temp access token
+Use Gradlew to publish -> ./gradlew publish -p android-seshat
+
+

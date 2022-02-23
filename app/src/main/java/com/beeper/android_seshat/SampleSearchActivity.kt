@@ -32,7 +32,7 @@ class SampleSearchActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         val dbCreationResult = Database.get(filesDir.path)
 
-        if (dbCreationResult is Error) {
+        if (dbCreationResult is com.beeper.android_seshat.util.Error) {
             setContent {
                 AppTheme {
                     Text("App error: DB couldn't be loaded.")
@@ -112,7 +112,7 @@ class SampleSearchActivity : ComponentActivity() {
                                         withContext(Dispatchers.IO) {
                                             when (val searchResult =
                                                 db.search(searchTerm, SearchConfig())) {
-                                                is Error -> {
+                                                is com.beeper.android_seshat.util.Error -> {
                                                     withContext(Dispatchers.Main) {
                                                         searchResultState.value = listOf()
                                                     }
