@@ -29,7 +29,9 @@ Check NDK and CMAKE  for installation and click `OK`.
 Comment: downgrade from NDK 23 to 22 because of https://github.com/bbqsrc/cargo-ndk/issues/22
 
 - Manually publish the library to Package Registry
-Setup the GITLAB_PRIVATE_TOKEN environment variable with your temp access token
-Use Gradlew to publish -> ./gradlew publish -p android-seshat
+
+    - Setup the GITLAB_PRIVATE_TOKEN environment variable with your temp access token
+
+    - Use Gradlew to publish -> ./gradlew publish -p android-seshat
 
 
