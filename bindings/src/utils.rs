@@ -15,8 +15,22 @@ use std::{
  *   UTILITIES
  */
 pub unsafe fn jstring_to_string(env: &JNIEnv, j_string: JString) -> String {
-    let c_str = CString::from(CStr::from_ptr(env.get_string(j_string).unwrap().as_ptr()));
-    c_str.to_str().unwrap().to_string()
+    let env_str_result = env.get_string(j_string);
+    match env_str_result {
+        Ok(java_str) => {
+            let ptr = java_str.as_ptr();
+            let c_str_ptr = CStr::from_ptr(ptr);
+            let c_str = CString::from(c_str_ptr);
+            let c_str_result = c_str.to_str();
+            match c_str_result{
+                Ok(c_str) => {
+                    c_str.to_string()
+                },
+                Err(_) => String::from("")
+            }
+        },
+        Err(_) => String::from("")
+    }
 }
 
 pub fn seshat_error_code(error: Error) -> i32 {
